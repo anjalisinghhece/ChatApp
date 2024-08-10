@@ -1,6 +1,4 @@
-// @ts-nocheck
 
-// Create a WebSocket connection
 const ws = new WebSocket('ws://localhost:3000')
 
 ws.onmessage = (event) => {
@@ -67,13 +65,11 @@ const sendMessage = (e) => {
     timestamp,
   }
 
-  // Send message through WebSocket
+
   ws.send(JSON.stringify(message))
 
-  // Clear input field
+  
   chatInputForm.reset()
-
-  // Scroll to bottom of chat messages
   chatMessages.scrollTop = chatMessages.scrollHeight
 }
 
